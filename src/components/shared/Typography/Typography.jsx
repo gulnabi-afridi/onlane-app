@@ -24,8 +24,8 @@ const Typography = {
   MediumText,
   LightText,
   NormalText,
-  Heading1: H1,
-  Heading2: H2,
+  H1: Heading1,
+  H2: Heading2,
 };
 
 export default Typography;

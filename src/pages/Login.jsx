@@ -1,12 +1,11 @@
 import React from 'react';
+import Typography from '../components/shared/Typography/Typography';
 
 const Login = () => {
   return (
     <div className='w-full min-h-screen flex justify-center items-center'>
       {/* logo ---------->  */}
-      <p className='text-[40px] text-[red] font-extrabold font-roboto capitalize'>
-        TwwWWWotal{' '}
-      </p>
+      <p className='text-[35px] font-extrabold'></p>
     </div>
   );
 };
