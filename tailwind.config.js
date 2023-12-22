@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         roboto: ['Roboto Serif', 'serif'],
+        smRoboto: ['Roboto', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
       },
       screens: {
