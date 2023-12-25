@@ -11,7 +11,9 @@ const FillButton = ({
       onClick={event}
       className={`${styles} hover:opacity-80 active:translate-y-[2px]`}
     >
-      <p className='text-[20px] font-semibold text-white-main'>{children}</p>
+      <p className='text-[16px] sm:text-[20px] tracking-wide font-semibold text-white-main'>
+        {children}
+      </p>
     </button>
   );
 };
