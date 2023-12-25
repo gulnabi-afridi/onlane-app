@@ -2,7 +2,7 @@ import React from 'react';
 
 export const MediumText = ({ children, styles = 'text-black-main' }) => {
   return (
-    <p className={`text-[15px] font-normal font-poppins ${styles}`}>
+    <p className={`text-[12px] sm:text-[15px] font-poppins ${styles}`}>
       {children}
     </p>
   );
@@ -17,7 +17,11 @@ export const NormalText = ({ children, styles = 'text-black-main' }) => {
 };
 
 export const Heading1 = ({ children, styles = 'text-black-main' }) => {
-  return <p className={`text-[35px] font-extrabold ${styles}`}>{children}</p>;
+  return (
+    <p className={`text-[30px] sm:text-[35px] font-extrabold ${styles}`}>
+      {children}
+    </p>
+  );
 };
 
 export const Heading2 = ({ children, styles = 'text-black-main' }) => {
