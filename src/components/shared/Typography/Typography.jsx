@@ -8,24 +8,22 @@ export const MediumText = ({ children, styles = 'text-black-main' }) => {
   );
 };
 
-export const LightText = ({ children, styles = 'text-black-main' }) => {
-  return <p className={`text-[15px] font-extralight ${styles}`}>{children}</p>;
+export const NormalText = ({
+  children,
+  styles = 'text-black-main font-light',
+}) => {
+  return <p className={`text-[15px] ${styles}`}>{children}</p>;
 };
 
-export const NormalText = ({ children, styles = 'text-black-main' }) => {
-  return <p className={`text-[15px] font-light ${styles}`}>{children}</p>;
-};
-
-export const Heading1 = ({ children, styles = 'text-black-main' }) => {
-  return (
-    <p className={`text-[30px] sm:text-[35px] font-extrabold ${styles}`}>
-      {children}
-    </p>
-  );
+export const Heading1 = ({
+  children,
+  styles = 'text-black-main font-extrabold',
+}) => {
+  return <p className={`text-[30px] sm:text-[35px] ${styles}`}>{children}</p>;
 };
 
 export const Heading2 = ({ children, styles = 'text-black-main' }) => {
-  return <p className={`text-[25px] font-semibold ${styles}`}>{children}</p>;
+  return <p className={`text-[25px] ${styles}`}>{children}</p>;
 };
 
 export const Heading3 = ({ children, styles = 'text-black-main' }) => {
@@ -34,7 +32,6 @@ export const Heading3 = ({ children, styles = 'text-black-main' }) => {
 
 const Typography = {
   MediumText,
-  LightText,
   NormalText,
   H1: Heading1,
   H2: Heading2,

@@ -20,6 +20,7 @@ module.exports = {
           main: '#000000',
           light: '#676767',
           cool: '#9B9A9A',
+          off: '#adadad',
         },
         white: {
           main: '#FFFFFF',
