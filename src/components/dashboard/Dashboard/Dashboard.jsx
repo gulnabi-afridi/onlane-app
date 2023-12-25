@@ -42,10 +42,34 @@ const Dashboard = () => {
       </div>
 
       {/* charging sessions section -------->  */}
-      <div className='w-full flex flex-col bg-white-main rounded-[15px] uiShadow1 p-5'>
+      <div className='w-full flex flex-col gap-5 bg-white-main rounded-[15px] uiShadow1 p-5'>
         <Typography.H2 styles='text-black-main font-poppins font-semibold'>
           Charging Sessions
         </Typography.H2>
+        {/* table ----->  */}
+        <div className='w-full flex flex-col'>
+          {/* header -->  */}
+          <div className='w-full h-[35px] bg-white-dark rounded-[4px] grid grid-cols-[1fr,1fr,1fr,1fr,1.2fr,1fr] px-10'>
+            {chargingSessionTable.header.map((item, index) => {
+              return (
+                <div className='w-full h-full flex justify-start items-center'>
+                  <Typography.MediumText
+                    key={index}
+                    styles='text-black-main font-normal font-poppins'
+                  >
+                    {item}
+                  </Typography.MediumText>
+                </div>
+              );
+            })}
+          </div>
+          {/* rows ---->  */}
+          <div className='w-full h-[35px] grid grid-cols-[1fr,1fr,1fr,1fr,1.2fr,1fr] px-10'>
+            <div className='w-full h-full flex justify-start items-center'>
+              <Typography.MediumText styles='text-black-main font-poppins font-light'></Typography.MediumText>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -68,5 +92,41 @@ const widgetData = [
     value: '2.0 RON/kWh',
   },
 ];
+
+const chargingSessionTable = {
+  header: ['Date', 'Location', 'Net Price', 'Plate No.', 'Driver', 'Merchant'],
+  rows: [
+    {
+      item: [
+        '6 Nov 2023',
+        'Bucuresti',
+        '1.3 RON/kWh',
+        'B 200 BRR',
+        'John Doe',
+        'ACME S.R.L',
+      ],
+    },
+    {
+      item: [
+        '6 Nov 2023',
+        'Bucuresti',
+        '1.3 RON/kWh',
+        'B 200 BRR',
+        'John Doe',
+        'ACME S.R.L',
+      ],
+    },
+    {
+      item: [
+        '6 Nov 2023',
+        'Bucuresti',
+        '1.3 RON/kWh',
+        'B 200 BRR',
+        'John Doe',
+        'ACME S.R.L',
+      ],
+    },
+  ],
+};
 
 export default Dashboard;
