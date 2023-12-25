@@ -20,3 +20,7 @@
 .widgetSha {
   box-shadow: 0px 4px 10px 1px rgba(173, 170, 170, 0.25);
 }
+
+.uiShadow1 {
+  box-shadow: 0px 4px 10px 0px rgba(163, 163, 163, 0.25);
+}

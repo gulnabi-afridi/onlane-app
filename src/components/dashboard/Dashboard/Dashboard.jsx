@@ -24,6 +24,29 @@ const Dashboard = () => {
           );
         })}
       </div>
+      {/* upcomming payment ---->  */}
+      <div className='w-full flex flex-col gap-3 my-8 p-5 bg-white-main rounded-[15px] uiShadow1'>
+        <div className='w-full flex justify-between items-center'>
+          <Typography.H2 styles='text-black-main font-poppins font-semibold'>
+            Upcoming Payment
+          </Typography.H2>
+          <Typography.MediumText styles='text-black-main font-poppins font-light'>
+            Billing period: 20 Nov - 20 Dec
+          </Typography.MediumText>
+        </div>
+        <Typography.MediumText styles='text-black-main font-poppins font-light'>
+          Invoice will be auto-generated on{' '}
+          <span className='font-bold'> 20 Dec</span> for account
+          RO01BTRL***************0634
+        </Typography.MediumText>
+      </div>
+
+      {/* charging sessions section -------->  */}
+      <div className='w-full flex flex-col bg-white-main rounded-[15px] uiShadow1 p-5'>
+        <Typography.H2 styles='text-black-main font-poppins font-semibold'>
+          Charging Sessions
+        </Typography.H2>
+      </div>
     </div>
   );
 };
