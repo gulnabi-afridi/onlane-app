@@ -10,7 +10,7 @@ const DashboardPage = () => {
         {/* left navigation ============>  */}
         <LeftNavigation />
         {/* right portion ===========>  */}
-        <div className='rightPor bg-black-off/5 h-full pt-14 px-14'>
+        <div className='rightPor bg-black-off/5 h-full pt-14 pb-12 px-14'>
           {/* main dashboard =====>  */}
           <Dashboard />
         </div>

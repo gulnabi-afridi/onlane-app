@@ -3,7 +3,7 @@ import Typography from '../../shared/Typography/Typography';
 
 const Widget = ({ title, subTitle, value }) => {
   return (
-    <div className='w-full h-[215px] flex flex-col justify-between bg-white-main p-6 widgetSha rounded-[16px]'>
+    <div className='w-full flex flex-col gap-5 justify-between bg-white-main p-6 widgetSha rounded-[16px] border-[1px] border-black-main/10'>
       <div className='flex flex-col gap-3'>
         <Typography.H2 styles='text-black-main font-semibold font-poppins'>
           {title}

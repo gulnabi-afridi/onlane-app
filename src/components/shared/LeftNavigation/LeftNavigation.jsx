@@ -13,7 +13,7 @@ const LeftNavigation = () => {
         <span className='text-success-main'>On</span>
         <span className='text-black-main'>Lane</span>
       </p>
-      <div className='w-full flex flex-col gap-6 justify-center items-center'>
+      <div className='w-full flex flex-col gap-2 justify-center items-center'>
         <button
           onClick={() => setSelectedOption('dashboard')}
           className={`w-full max-w-[234px] flex justify-center items-center gap-3 h-[41px] rounded-[8px] ${
@@ -39,7 +39,7 @@ const LeftNavigation = () => {
         {/* control ---->  */}
         {leftNavigation.map((item, index) => {
           return (
-            <div key={index} className='w-full flex flex-col gap-3'>
+            <div key={index} className='w-full flex flex-col gap-2'>
               <button className='w-full max-w-[234px] flex justify-center items-center gap-3 h-[41px] rounded-[8px]'>
                 {item.icon}
                 <Typography.MediumText styles='font-normal tracking-wider text-black-cool'>
@@ -57,7 +57,7 @@ const LeftNavigation = () => {
                         list === selectedOption
                           ? 'leftNavigationSha'
                           : 'bg-transparent'
-                      }  h-[41px] max-w-[234px] group justify-start pl-[84px] items-center gap-1`}
+                      }  h-[41px] max-w-[234px] group justify-start pl-[75px] items-center gap-1`}
                     >
                       <LuDot
                         className={`text-[20px] group-hover:text-success-main ${

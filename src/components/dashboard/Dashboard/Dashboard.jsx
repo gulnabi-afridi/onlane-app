@@ -12,7 +12,7 @@ const Dashboard = () => {
         Selected Period: Auto (20 Nov - 20 Dec 2023)
       </Typography.NormalText>
       {/* widgets ---->  */}
-      <div className='w-full grid grid-cols-3 gap-7 mt-10'>
+      <div className='w-full grid grid-cols-3 gap-7 mt-8'>
         {widgetData.map((item, index) => {
           return (
             <Widget
@@ -25,7 +25,7 @@ const Dashboard = () => {
         })}
       </div>
       {/* upcomming payment ---->  */}
-      <div className='w-full flex flex-col gap-3 my-8 p-5 bg-white-main rounded-[15px] uiShadow1'>
+      <div className='w-full flex flex-col gap-3 my-6 p-5 bg-white-main rounded-[15px] uiShadow1 border-[1px] border-black-main/10'>
         <div className='w-full flex justify-between items-center'>
           <Typography.H2 styles='text-black-main font-poppins font-semibold'>
             Upcoming Payment
@@ -42,7 +42,7 @@ const Dashboard = () => {
       </div>
 
       {/* charging sessions section -------->  */}
-      <div className='w-full flex flex-col gap-5 bg-white-main rounded-[15px] uiShadow1 p-5'>
+      <div className='w-full flex flex-col gap-5 bg-white-main rounded-[15px] uiShadow1 p-5 border-[1px] border-black-main/10'>
         <Typography.H2 styles='text-black-main font-poppins font-semibold'>
           Charging Sessions
         </Typography.H2>
@@ -64,10 +64,24 @@ const Dashboard = () => {
             })}
           </div>
           {/* rows ---->  */}
-          <div className='w-full h-[35px] grid grid-cols-[1fr,1fr,1fr,1fr,1.2fr,1fr] px-10'>
-            <div className='w-full h-full flex justify-start items-center'>
-              <Typography.MediumText styles='text-black-main font-poppins font-light'></Typography.MediumText>
-            </div>
+          <div className='w-full max-h-[170px] overflow-auto flex flex-col'>
+            {chargingSessionTable.rows.map((item, rowIndex) => (
+              <div
+                key={rowIndex}
+                className='w-full min-h-[35px] grid grid-cols-[1fr,1fr,1fr,1fr,1.2fr,1fr] px-10'
+              >
+                {item.row.map((rowItem, colIndex) => (
+                  <div
+                    key={colIndex}
+                    className='w-full h-full flex justify-start items-center'
+                  >
+                    <Typography.MediumText styles='text-black-main font-poppins font-light'>
+                      {rowItem}
+                    </Typography.MediumText>
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -97,7 +111,7 @@ const chargingSessionTable = {
   header: ['Date', 'Location', 'Net Price', 'Plate No.', 'Driver', 'Merchant'],
   rows: [
     {
-      item: [
+      row: [
         '6 Nov 2023',
         'Bucuresti',
         '1.3 RON/kWh',
@@ -107,7 +121,7 @@ const chargingSessionTable = {
       ],
     },
     {
-      item: [
+      row: [
         '6 Nov 2023',
         'Bucuresti',
         '1.3 RON/kWh',
@@ -117,7 +131,37 @@ const chargingSessionTable = {
       ],
     },
     {
-      item: [
+      row: [
+        '6 Nov 2023',
+        'Bucuresti',
+        '1.3 RON/kWh',
+        'B 200 BRR',
+        'John Doe',
+        'ACME S.R.L',
+      ],
+    },
+    {
+      row: [
+        '6 Nov 2023',
+        'Bucuresti',
+        '1.3 RON/kWh',
+        'B 200 BRR',
+        'John Doe',
+        'ACME S.R.L',
+      ],
+    },
+    {
+      row: [
+        '6 Nov 2023',
+        'Bucuresti',
+        '1.3 RON/kWh',
+        'B 200 BRR',
+        'John Doe',
+        'ACME S.R.L',
+      ],
+    },
+    {
+      row: [
         '6 Nov 2023',
         'Bucuresti',
         '1.3 RON/kWh',
