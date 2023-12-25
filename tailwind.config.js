@@ -19,6 +19,7 @@ module.exports = {
         black: {
           main: '#000000',
           light: '#676767',
+          cool: '#9B9A9A',
         },
         white: {
           main: '#FFFFFF',

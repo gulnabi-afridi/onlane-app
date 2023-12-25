@@ -6,3 +6,13 @@
 .cardShadow {
   box-shadow: 0px 4px 30px 10px rgba(209, 209, 209, 0.25);
 }
+
+.rightPor {
+  background: #adadad;
+  box-shadow: 0px 4px 8px 0px rgba(188, 188, 188, 0.25);
+}
+
+.leftNavigationSha {
+  background: rgba(37, 161, 142, 0.1);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
