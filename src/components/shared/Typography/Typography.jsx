@@ -12,7 +12,13 @@ export const NormalText = ({
   children,
   styles = 'text-black-main font-light',
 }) => {
-  return <p className={`text-[15px] ${styles}`}>{children}</p>;
+  return (
+    <p
+      className={`text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] ${styles}`}
+    >
+      {children}
+    </p>
+  );
 };
 
 export const Heading1 = ({
@@ -23,7 +29,11 @@ export const Heading1 = ({
 };
 
 export const Heading2 = ({ children, styles = 'text-black-main' }) => {
-  return <p className={`text-[25px] ${styles}`}>{children}</p>;
+  return (
+    <p className={`text-[18px] sm:text-[22px] md:text-[25px] ${styles}`}>
+      {children}
+    </p>
+  );
 };
 
 export const Heading3 = ({ children, styles = 'text-black-main' }) => {

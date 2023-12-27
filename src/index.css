@@ -24,3 +24,22 @@
 .uiShadow1 {
   box-shadow: 0px 4px 10px 0px rgba(163, 163, 163, 0.25);
 }
+.hideScroll::-webkit-scrollbar {
+  display: none !important;
+}
+/* drawer styles ===========>  */
+
+.drawer {
+  width: 50% !important;
+}
+@media screen and (max-width: 700px) {
+  .drawer {
+    width: 70% !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .drawer {
+    width: 100% !important;
+  }
+}
+/* drawer styeles ends here ===========>  */

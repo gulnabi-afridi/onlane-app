@@ -10,9 +10,9 @@ module.exports = {
       },
       screens: {
         xs: '325px',
-        sm: '480px',
+        sm: '500px',
         md: '768px',
-        lg: '976px',
+        lg: '1100px',
         xl: '1280px',
       },
       colors: {

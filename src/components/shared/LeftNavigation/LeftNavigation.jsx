@@ -3,11 +3,9 @@ import Typography from '../Typography/Typography';
 import * as Icons from '../../../svg/Icons';
 import { LuDot } from 'react-icons/lu';
 
-const LeftNavigation = () => {
-  const [selectedOption, setSelectedOption] = useState('dashboard');
-
+const LeftNavigation = ({ selectedOption, setSelectedOption }) => {
   return (
-    <div className='w-full flex flex-col gap-16 justify-start items-center pt-14'>
+    <div className='w-full hidden lg:flex flex-col gap-12 justify-start items-center pt-12  border-r-[1px] border-black-main/5'>
       {/* logo ---->  */}
       <p className='text-[30px] sm:text-[35px] font-extrabold font-poppins'>
         <span className='text-success-main'>On</span>
