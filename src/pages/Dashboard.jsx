@@ -19,7 +19,7 @@ const DashboardPage = () => {
         {/* right portion ===========>  */}
         <div className='rightPor bg-black-off/5 h-full'>
           <SmallScreenLeftNavigation />
-          <div className='pt-2 lg:pt-12 pb-8 lg:pb-12'>
+          <div className=''>
             {/* main dashboard =====>  */}
             {selectedOption === 'dashboard' && <Dashboard />}
             {selectedOption === 'Fleet' && <Fleet />}

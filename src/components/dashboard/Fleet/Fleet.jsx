@@ -6,18 +6,30 @@ import SearchBar from '../../shared/Inputs/SearchBar';
 import FillButton from '../../shared/Buttons/FillButton';
 import OutlineButton from '../../shared/Buttons/OutlineButton';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
+import Pagination from '../../shared/Pagination/Pagination';
 
 const Fleet = () => {
+  // states ------->
   const [selectedRow, setSelectedRow] = useState(2);
+  const [currentPage, setCurrentPage] = React.useState(1);
+  const totalPages = 10;
+
+  // states ends here ----->
+
+  // methods ------->
+  const onPageChange = (page) => {
+    setCurrentPage(page);
+  };
+  // methods ends here ------->
 
   return (
-    <div className='w-full flex flex-col h-full gap-6 px-8'>
-      <div className='flex flex-col min-h-[140px] justify-between'>
-        <Typography.H1 styles='text-black-main font-extrabold'>
+    <div className='w-full flex flex-col h-full px-8'>
+      <div className='flex flex-col min-h-[200px] justify-between'>
+        <Typography.H1 styles='text-black-main font-extrabold pt-2 lg:pt-12'>
           Fleet Management
         </Typography.H1>
         {/* top header ----->  */}
-        <div className='w-full flex justify-between items-center pl-6'>
+        <div className='w-full flex justify-between items-center pl-6 pb-4'>
           {/* search bar -->  */}
           <SearchBar />
           {/* delete + add button --->  */}
@@ -38,7 +50,7 @@ const Fleet = () => {
         </div>
       </div>
       {/* table ------>  */}
-      <div className='w-full flex flex-col'>
+      <div className='w-full h-[calc(100vh-300px)] flex flex-col'>
         {/* header -->  */}
         <div className='w-full grid h-[36px] bg-white-dark rounded-[4px] px-3 grid-cols-[.2fr,.7fr,1fr,.5fr,.5fr,.5fr,1fr,1fr,.6fr,1.3fr,1fr,20px] justify-center items-center'>
           <button className='w-[15px] h-[15px] rounded-full border-[1px] border-[#737373]'></button>
@@ -145,6 +157,14 @@ const Fleet = () => {
             </div>
           );
         })}
+      </div>
+      {/* pagination -------->  */}
+      <div className='w-full h-[100px] flex justify-center items-center px-4'>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={onPageChange}
+        />
       </div>
     </div>
   );
