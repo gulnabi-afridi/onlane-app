@@ -7,10 +7,10 @@ import FillButton from '../../shared/Buttons/FillButton';
 import OutlineButton from '../../shared/Buttons/OutlineButton';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
 import Pagination from '../../shared/Pagination/Pagination';
+import CarDetailRow from './CarDetailRow';
 
 const Fleet = () => {
   // states ------->
-  const [selectedRow, setSelectedRow] = useState(2);
   const [currentPage, setCurrentPage] = React.useState(1);
   const totalPages = 10;
 
@@ -50,9 +50,9 @@ const Fleet = () => {
         </div>
       </div>
       {/* table ------>  */}
-      <div className='w-full h-[calc(100vh-300px)] flex flex-col'>
+      <div className='w-full max-h-[calc(100vh-280px)] overflow-auto hideScroll flex flex-col'>
         {/* header -->  */}
-        <div className='w-full grid h-[36px] bg-white-dark rounded-[4px] px-3 grid-cols-[.2fr,.7fr,1fr,.5fr,.5fr,.5fr,1fr,1fr,.6fr,1.3fr,1fr,20px] justify-center items-center'>
+        <div className='w-full grid min-h-[36px] bg-white-dark rounded-[4px] px-3 grid-cols-[.2fr,.7fr,1fr,.5fr,.5fr,.5fr,1fr,1fr,.6fr,1.3fr,1fr,20px] justify-center items-center'>
           <button className='w-[15px] h-[15px] rounded-full border-[1px] border-[#737373]'></button>
           {fleetTable.header.map((item, index) => {
             if (item.key === 'brand') {
@@ -87,79 +87,11 @@ const Fleet = () => {
         </div>
         {/* rows ----->  */}
         {fleetTable.rows.map((item, index) => {
-          return (
-            <div className='w-full grid h-[36px] bg-white-main rounded-[4px] px-3 grid-cols-[.2fr,.7fr,1fr,.5fr,.5fr,.5fr,1fr,1fr,.6fr,1.3fr,1fr,20px] justify-center items-center'>
-              <button
-                onClick={() => setSelectedRow(item.id)}
-                className={`w-[15px] h-[15px] ${
-                  selectedRow === item.id
-                    ? 'bg-[#0094FF] outline outline-[#737373] outline-offset-2 outline-[1px]'
-                    : 'bg-transparent  border-[1px] border-[#737373]'
-                } rounded-full `}
-              ></button>
-              <div className='w-full max-w-[80px] flex justify-start items-center overflow-auto hideScroll'>
-                <Typography.NormalText styles='text-success-main font-poppins font-light'>
-                  {item.plateNo}
-                </Typography.NormalText>
-              </div>
-              <div
-                key={index}
-                className='flex justify-center items-center gap-2'
-              >
-                <div className='w-full max-w-[100px] flex justify-start items-center gap-2 overflow-auto hideScroll'>
-                  <Typography.NormalText styles='text-black-main font-poppins font-light'>
-                    {item.brandModel.brand}
-                  </Typography.NormalText>
-                  <Typography.NormalText styles='text-black-main font-poppins font-light'>
-                    {item.brandModel.model}
-                  </Typography.NormalText>
-                </div>
-              </div>
-              <Typography.NormalText styles='text-success-main font-poppins font-light'>
-                {item.year}
-              </Typography.NormalText>
-              <div className='w-full max-w-[50px] flex justify-start items-center overflow-auto hideScroll'>
-                <Typography.NormalText styles='text-success-main font-poppins font-light'>
-                  {item.color}
-                </Typography.NormalText>
-              </div>
-              <p className='text-[#2FB719] w-[52px] h-[13px] border-[1px] capitalize rounded-[60px] flex justify-center items-center border-[#2FB719] bg-[#CBEEBB] text-[8px] font-poppins font-light'>
-                {item.status}
-              </p>
-              <div className='w-full flex justify-start items-center max-w-[103px] overflow-auto hideScroll'>
-                <Typography.NormalText styles='text-black-main font-poppins font-light'>
-                  {item.insuranceExp}
-                </Typography.NormalText>
-              </div>
-              <div className='w-full flex justify-start items-center max-w-[103px] overflow-auto hideScroll'>
-                <Typography.NormalText styles='text-black-main font-poppins font-light'>
-                  {item.vignetteExp}
-                </Typography.NormalText>
-              </div>
-              <div className='w-full max-w-[60px] flex justify-start items-center overflow-auto hideScroll'>
-                <Typography.NormalText styles='text-black-main font-poppins font-light'>
-                  {item.mileage}
-                </Typography.NormalText>
-              </div>
-              <div className='w-full max-w-[150px] overflow-auto hideScroll'>
-                <Typography.NormalText styles='text-black-main font-poppins font-light'>
-                  {item.vin}
-                </Typography.NormalText>
-              </div>
-              <div className='w-full max-w-[103px] flex justify-start items-center overflow-auto hideScroll'>
-                <Typography.NormalText styles='text-black-main font-poppins font-light'>
-                  {item.itpDate}
-                </Typography.NormalText>
-              </div>
-              <div className='flex justify-center items-center'>
-                <HiOutlineDotsVertical className='text-black-main text-[18px] cursor-pointer' />
-              </div>
-            </div>
-          );
+          return <CarDetailRow key={index} row={item} />;
         })}
       </div>
       {/* pagination -------->  */}
-      <div className='w-full h-[100px] flex justify-center items-center px-4'>
+      <div className='w-full h-[80px] flex justify-center items-start pt-4 px-4 border-t-[1px] border-[#CECECE]'>
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
@@ -244,6 +176,234 @@ const fleetTable = {
     },
     {
       id: 4,
+      plateNo: 'B 500 IDX',
+
+      brandModel: {
+        brand: 'Dacia',
+        model: 'Spring',
+      },
+      model: 'Spring',
+      year: '2019',
+      color: 'White',
+      status: 'active',
+      status: 'active',
+      insuranceExp: '22 Nov 2022',
+      vignetteExp: '10 Apr 2024',
+      mileage: 'Mileage',
+      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
+      itpDate: '10 Apr 2024',
+    },
+    {
+      id: 5,
+      plateNo: 'B 500 IDX',
+
+      brandModel: {
+        brand: 'Dacia',
+        model: 'Spring',
+      },
+      model: 'Spring',
+      year: '2019',
+      color: 'White',
+      status: 'active',
+      status: 'active',
+      insuranceExp: '22 Nov 2022',
+      vignetteExp: '10 Apr 2024',
+      mileage: 'Mileage',
+      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
+      itpDate: '10 Apr 2024',
+    },
+    {
+      id: 5,
+      plateNo: 'B 500 IDX',
+
+      brandModel: {
+        brand: 'Dacia',
+        model: 'Spring',
+      },
+      model: 'Spring',
+      year: '2019',
+      color: 'White',
+      status: 'active',
+      status: 'active',
+      insuranceExp: '22 Nov 2022',
+      vignetteExp: '10 Apr 2024',
+      mileage: 'Mileage',
+      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
+      itpDate: '10 Apr 2024',
+    },
+    {
+      id: 5,
+      plateNo: 'B 500 IDX',
+
+      brandModel: {
+        brand: 'Dacia',
+        model: 'Spring',
+      },
+      model: 'Spring',
+      year: '2019',
+      color: 'White',
+      status: 'active',
+      status: 'active',
+      insuranceExp: '22 Nov 2022',
+      vignetteExp: '10 Apr 2024',
+      mileage: 'Mileage',
+      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
+      itpDate: '10 Apr 2024',
+    },
+    {
+      id: 5,
+      plateNo: 'B 500 IDX',
+
+      brandModel: {
+        brand: 'Dacia',
+        model: 'Spring',
+      },
+      model: 'Spring',
+      year: '2019',
+      color: 'White',
+      status: 'active',
+      status: 'active',
+      insuranceExp: '22 Nov 2022',
+      vignetteExp: '10 Apr 2024',
+      mileage: 'Mileage',
+      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
+      itpDate: '10 Apr 2024',
+    },
+    {
+      id: 5,
+      plateNo: 'B 500 IDX',
+
+      brandModel: {
+        brand: 'Dacia',
+        model: 'Spring',
+      },
+      model: 'Spring',
+      year: '2019',
+      color: 'White',
+      status: 'active',
+      status: 'active',
+      insuranceExp: '22 Nov 2022',
+      vignetteExp: '10 Apr 2024',
+      mileage: 'Mileage',
+      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
+      itpDate: '10 Apr 2024',
+    },
+    {
+      id: 5,
+      plateNo: 'B 500 IDX',
+
+      brandModel: {
+        brand: 'Dacia',
+        model: 'Spring',
+      },
+      model: 'Spring',
+      year: '2019',
+      color: 'White',
+      status: 'active',
+      status: 'active',
+      insuranceExp: '22 Nov 2022',
+      vignetteExp: '10 Apr 2024',
+      mileage: 'Mileage',
+      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
+      itpDate: '10 Apr 2024',
+    },
+    {
+      id: 5,
+      plateNo: 'B 500 IDX',
+
+      brandModel: {
+        brand: 'Dacia',
+        model: 'Spring',
+      },
+      model: 'Spring',
+      year: '2019',
+      color: 'White',
+      status: 'active',
+      status: 'active',
+      insuranceExp: '22 Nov 2022',
+      vignetteExp: '10 Apr 2024',
+      mileage: 'Mileage',
+      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
+      itpDate: '10 Apr 2024',
+    },
+    {
+      id: 5,
+      plateNo: 'B 500 IDX',
+
+      brandModel: {
+        brand: 'Dacia',
+        model: 'Spring',
+      },
+      model: 'Spring',
+      year: '2019',
+      color: 'White',
+      status: 'active',
+      status: 'active',
+      insuranceExp: '22 Nov 2022',
+      vignetteExp: '10 Apr 2024',
+      mileage: 'Mileage',
+      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
+      itpDate: '10 Apr 2024',
+    },
+    {
+      id: 5,
+      plateNo: 'B 500 IDX',
+
+      brandModel: {
+        brand: 'Dacia',
+        model: 'Spring',
+      },
+      model: 'Spring',
+      year: '2019',
+      color: 'White',
+      status: 'active',
+      status: 'active',
+      insuranceExp: '22 Nov 2022',
+      vignetteExp: '10 Apr 2024',
+      mileage: 'Mileage',
+      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
+      itpDate: '10 Apr 2024',
+    },
+    {
+      id: 5,
+      plateNo: 'B 500 IDX',
+
+      brandModel: {
+        brand: 'Dacia',
+        model: 'Spring',
+      },
+      model: 'Spring',
+      year: '2019',
+      color: 'White',
+      status: 'active',
+      status: 'active',
+      insuranceExp: '22 Nov 2022',
+      vignetteExp: '10 Apr 2024',
+      mileage: 'Mileage',
+      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
+      itpDate: '10 Apr 2024',
+    },
+    {
+      id: 5,
+      plateNo: 'B 500 IDX',
+
+      brandModel: {
+        brand: 'Dacia',
+        model: 'Spring',
+      },
+      model: 'Spring',
+      year: '2019',
+      color: 'White',
+      status: 'active',
+      status: 'active',
+      insuranceExp: '22 Nov 2022',
+      vignetteExp: '10 Apr 2024',
+      mileage: 'Mileage',
+      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
+      itpDate: '10 Apr 2024',
+    },
+    {
+      id: 5,
       plateNo: 'B 500 IDX',
 
       brandModel: {
