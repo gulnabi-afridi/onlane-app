@@ -17,7 +17,7 @@ const DashboardPage = () => {
           setSelectedOption={setSelectedOption}
         />
         {/* right portion ===========>  */}
-        <div className='rightPor bg-black-off/5 h-full px-0 md:px-8 xl:px-14'>
+        <div className='rightPor bg-black-off/5 h-full'>
           <SmallScreenLeftNavigation />
           <div className='pt-2 lg:pt-12 pb-8 lg:pb-12'>
             {/* main dashboard =====>  */}

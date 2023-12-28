@@ -3,7 +3,7 @@ import Typography from '../../shared/Typography/Typography';
 import Widget from './Widget';
 const Dashboard = () => {
   return (
-    <div className='w-full h-full flex flex-col'>
+    <div className='w-full h-full flex flex-col px-0 md:px-8 xl:px-14'>
       <Typography.H1 styles='text-black-main font-extrabold'>
         Dashboard
       </Typography.H1>

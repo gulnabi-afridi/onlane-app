@@ -13,9 +13,7 @@ export const NormalText = ({
   styles = 'text-black-main font-light',
 }) => {
   return (
-    <p
-      className={`text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] ${styles}`}
-    >
+    <p className={`text-[12px] sm:text-[13px] md:text-[14px]  ${styles}`}>
       {children}
     </p>
   );
