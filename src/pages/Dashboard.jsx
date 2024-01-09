@@ -10,7 +10,7 @@ const DashboardPage = () => {
 
   return (
     <ComponentWrapper>
-      <div className='w-full grid min-h-screen grid-cols-1 lg:grid-cols-[274px,1fr] justify-start'>
+      <div className='w-full grid min-h-screen grid-cols-1 lg:grid-cols-[274px,1fr] justify-start '>
         {/* left navigation ============>  */}
         <LeftNavigation
           selectedOption={selectedOption}
