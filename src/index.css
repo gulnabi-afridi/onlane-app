@@ -50,3 +50,16 @@ input::-webkit-inner-spin-button {
   }
 }
 /* drawer styeles ends here ===========>  */
+
+/* Modal Styles ==> */
+.modal-rounded {
+  border-radius: 15px;
+  border: 0.5px solid #c3c3c3;
+  background: #fff;
+}
+
+.update-input {
+  border-radius: 7px;
+  border: 1px solid #e4e4e4;
+  background: #fff;
+}
