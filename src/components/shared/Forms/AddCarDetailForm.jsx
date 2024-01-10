@@ -81,7 +81,6 @@ const AddCarDetailForm = ({ onClose, onSubmit }) => {
   };
   const brandHandler = (e) => {
     setBrand(e.target.value);
-    // console.log(brand);
   };
   const colorHandler = (e) => {
     setColor(e.target.value);
@@ -89,7 +88,6 @@ const AddCarDetailForm = ({ onClose, onSubmit }) => {
 
   const modelHandler = (e) => {
     setModel(e.target.value);
-    // console.log(model);
   };
   return (
     <div className="modal-content py-4 text-left">
@@ -236,8 +234,14 @@ const AddCarDetailForm = ({ onClose, onSubmit }) => {
             </div>
           </div>
         </div>
-
-        {error && <p className="text-red-500 text-[14px] mb-[4px]">{error}</p>}
+        {/*  Error Messgae */}
+        {error && (
+          <div className="flex justify-center items-center">
+            <Typography.NormalText styles="text-red-500 text-center">
+              {error}
+            </Typography.NormalText>
+          </div>
+        )}
       </div>
       {/* FOOTER */}
       <div className="flex justify-end pt-2 px-6 border-solid border-t-[.5px] border-[#939393]">

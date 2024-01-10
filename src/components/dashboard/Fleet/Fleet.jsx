@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Typography from '../../shared/Typography/Typography';
-import SearchBar from '../../shared/Inputs/SearchBar';
-import FillButton from '../../shared/Buttons/FillButton';
-import OutlineButton from '../../shared/Buttons/OutlineButton';
-import Pagination from '../../shared/Pagination/Pagination';
-import CarDetailRow from './CarDetailRow';
-import CarDetailHeader from './CarDetailHeader';
-import CustomModal from '../../shared/Modal/CustomModal';
-import AddCarDetailForm from '../../shared/Forms/AddCarDetailForm';
-import UpdateCarDetailForm from '../../shared/Forms/UpdateCarDetailForm';
+import React, { useState } from "react";
+import Typography from "../../shared/Typography/Typography";
+import SearchBar from "../../shared/Inputs/SearchBar";
+import FillButton from "../../shared/Buttons/FillButton";
+import OutlineButton from "../../shared/Buttons/OutlineButton";
+import Pagination from "../../shared/Pagination/Pagination";
+import CarDetailRow from "./CarDetailRow";
+import CarDetailHeader from "./CarDetailHeader";
+import CustomModal from "../../shared/Modal/CustomModal";
+import AddCarDetailForm from "../../shared/Forms/AddCarDetailForm";
+import UpdateCarDetailForm from "../../shared/Forms/UpdateCarDetailForm";
 
 const Fleet = () => {
   // states ------->
@@ -29,93 +29,93 @@ const Fleet = () => {
   const [carData, setCarData] = useState([
     {
       id: 1,
-      plateNo: 'B 500 IDX',
+      plateNo: "B 500 IDX",
 
       brandModel: {
-        brand: 'Dacia',
-        model: 'Spring',
+        brand: "Dacia",
+        model: "Spring",
       },
-      model: 'Spring',
-      year: '2019',
-      color: 'White',
-      status: 'active',
-      insuranceExp: '22 Nov 2022',
-      vignetteExp: '10 Apr 2024',
-      mileage: 'Mileage',
-      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
-      itpDate: '10 Apr 2024',
+      model: "Spring",
+      year: "2019",
+      color: "White",
+      status: "active",
+      insuranceExp: "22 Nov 2022",
+      vignetteExp: "10 Apr 2024",
+      mileage: "Mileage",
+      vin: "1HGBH41JXMN1091861HGBH41JXMN109186",
+      itpDate: "10 Apr 2024",
     },
     {
       id: 2,
-      plateNo: 'B 500 IDX',
+      plateNo: "B 500 IDX",
 
       brandModel: {
-        brand: 'Dacia',
-        model: 'Spring',
+        brand: "Dacia",
+        model: "Spring",
       },
-      model: 'Spring',
-      year: '2019',
-      color: 'White',
-      status: 'active',
-      insuranceExp: '22 Nov 2022',
-      vignetteExp: '10 Apr 2024',
-      mileage: 'Mileage',
-      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
-      itpDate: '10 Apr 2024',
+      model: "Spring",
+      year: "2019",
+      color: "White",
+      status: "active",
+      insuranceExp: "22 Nov 2022",
+      vignetteExp: "10 Apr 2024",
+      mileage: "Mileage",
+      vin: "1HGBH41JXMN1091861HGBH41JXMN109186",
+      itpDate: "10 Apr 2024",
     },
     {
       id: 3,
-      plateNo: 'B 500 IDX',
+      plateNo: "B 500 IDX",
 
       brandModel: {
-        brand: 'Dacia',
-        model: 'Spring',
+        brand: "Dacia",
+        model: "Spring",
       },
-      model: 'Spring',
-      year: '2019',
-      color: 'White',
-      status: 'active',
-      insuranceExp: '22 Nov 2022',
-      vignetteExp: '10 Apr 2024',
-      mileage: 'Mileage',
-      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
-      itpDate: '10 Apr 2024',
+      model: "Spring",
+      year: "2019",
+      color: "White",
+      status: "active",
+      insuranceExp: "22 Nov 2022",
+      vignetteExp: "10 Apr 2024",
+      mileage: "Mileage",
+      vin: "1HGBH41JXMN1091861HGBH41JXMN109186",
+      itpDate: "10 Apr 2024",
     },
     {
       id: 4,
-      plateNo: 'B 500 IDX',
+      plateNo: "B 500 IDX",
 
       brandModel: {
-        brand: 'Dacia',
-        model: 'Spring',
+        brand: "Dacia",
+        model: "Spring",
       },
-      model: 'Spring',
-      year: '2019',
-      color: 'White',
-      status: 'active',
-      insuranceExp: '22 Nov 2022',
-      vignetteExp: '10 Apr 2024',
-      mileage: 'Mileage',
-      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
-      itpDate: '10 Apr 2024',
+      model: "Spring",
+      year: "2019",
+      color: "White",
+      status: "active",
+      insuranceExp: "22 Nov 2022",
+      vignetteExp: "10 Apr 2024",
+      mileage: "Mileage",
+      vin: "1HGBH41JXMN1091861HGBH41JXMN109186",
+      itpDate: "10 Apr 2024",
     },
     {
       id: 5,
-      plateNo: 'B 500 IDX',
+      plateNo: "B 500 IDX",
 
       brandModel: {
-        brand: 'Dacia',
-        model: 'Spring',
+        brand: "Dacia",
+        model: "Spring",
       },
-      model: 'Spring',
-      year: '2019',
-      color: 'White',
-      status: 'active',
-      insuranceExp: '22 Nov 2022',
-      vignetteExp: '10 Apr 2024',
-      mileage: 'Mileage',
-      vin: '1HGBH41JXMN1091861HGBH41JXMN109186',
-      itpDate: '10 Apr 2024',
+      model: "Spring",
+      year: "2019",
+      color: "White",
+      status: "active",
+      insuranceExp: "22 Nov 2022",
+      vignetteExp: "10 Apr 2024",
+      mileage: "Mileage",
+      vin: "1HGBH41JXMN1091861HGBH41JXMN109186",
+      itpDate: "10 Apr 2024",
     },
   ]);
 
@@ -128,7 +128,7 @@ const Fleet = () => {
     setAddCarDetailModal(true);
   };
 
-  const closeAddCardModalHandler = () => {
+  const closeAddCarModalHandler = () => {
     setAddCarDetailModal(false);
   };
 
@@ -142,14 +142,13 @@ const Fleet = () => {
   };
 
   const addCarDataHandler = (formData) => {
-    // console.log(formData);
     const newCarData = [...carData];
     const newCarEntry = {
       id: newCarData.length + 1,
       plateNo: formData.plateNo,
       brandModel: {
-        brand: formData.brand,
-        model: formData.model,
+        brand: formData.brandModel.brand,
+        model: formData.brandModel.model,
       },
       model: formData.model,
       year: formData.year,
@@ -164,7 +163,7 @@ const Fleet = () => {
 
     newCarData.push(newCarEntry);
     setCarData(newCarData);
-    closeAddCardModalHandler();
+    closeAddCarModalHandler();
   };
 
   const deleteCarHandler = () => {
@@ -181,36 +180,34 @@ const Fleet = () => {
       const updatedData = [...carData];
       updatedData[index] = updatedCarData;
       setCarData(updatedData);
-
-      console.log(carData);
     } else {
       // If the item is not found, you can handle it according to your requirements
-      console.error('Item with id', updatedCarData.id, 'not found.');
+      console.error("Item with id", updatedCarData.id, "not found.");
     }
   };
 
   return (
     <React.Fragment>
-      <div className='w-full flex flex-col h-full px-8'>
-        <div className='flex flex-col min-h-[190px] justify-between'>
-          <Typography.H1 styles='text-black-main font-extrabold pt-2 lg:pt-12'>
+      <div className="w-full flex flex-col h-full px-8">
+        <div className="flex flex-col min-h-[190px] justify-between">
+          <Typography.H1 styles="text-black-main font-extrabold pt-2 lg:pt-12">
             Fleet Management
           </Typography.H1>
           {/* top header ----->  */}
-          <div className='w-full flex justify-between items-center pl-6 pb-4'>
+          <div className="w-full flex justify-between items-center pl-6 pb-4">
             {/* search bar -->  */}
             <SearchBar />
             {/* delete + add button --->  */}
-            <div className='flex justify-center items-center gap-3'>
+            <div className="flex justify-center items-center gap-3">
               <OutlineButton
                 event={deleteCarHandler}
-                styles='text-[12px] font-poppins w-[91px] font-normal h-[24px] rounded-[7px] text-success-main'
+                styles="text-[12px] font-poppins w-[91px] font-normal h-[24px] rounded-[7px] text-success-main"
               >
                 Delete
               </OutlineButton>
               <FillButton
                 event={addCarModalHandler}
-                styles='text-[12px] text-white-main font-poppins font-normal w-[91px] h-[24px] rounded-[7px]'
+                styles="text-[12px] text-white-main font-poppins font-normal w-[91px] h-[24px] rounded-[7px]"
               >
                 Add
               </FillButton>
@@ -218,7 +215,7 @@ const Fleet = () => {
           </div>
         </div>
         {/* table ------>  */}
-        <div className='w-full h-[calc(100vh-270px)] flex flex-col'>
+        <div className="w-full h-[calc(100vh-270px)] flex flex-col">
           {/* header -->  */}
           <CarDetailHeader header={fleetTableHeader} />
           {/* rows ----->  */}
@@ -235,7 +232,7 @@ const Fleet = () => {
           })}
         </div>
         {/* pagination -------->  */}
-        <div className='w-full h-[80px] flex justify-center items-start pt-4 px-4 border-t-[1px] border-[#CECECE]'>
+        <div className="w-full h-[80px] flex justify-center items-start pt-4 px-4 border-t-[1px] border-[#CECECE]">
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
@@ -248,7 +245,7 @@ const Fleet = () => {
 
       <CustomModal setIsOpen={setAddCarDetailModal} isOpen={addCarDetailModal}>
         <AddCarDetailForm
-          onClose={closeAddCardModalHandler}
+          onClose={closeAddCarModalHandler}
           onSubmit={addCarDataHandler}
         />
       </CustomModal>
@@ -257,7 +254,7 @@ const Fleet = () => {
       <CustomModal
         setIsOpen={setUpdateCartDetailModal}
         isOpen={updateCardDetailModal}
-        styles='md:w-[499px] md:max-w-[520px] h-full overflow-y-scroll'
+        styles="md:w-[499px] md:max-w-[520px] h-[80%] my-auto overflow-y-scroll"
       >
         <UpdateCarDetailForm
           onClose={closeUpdateCarModalHandler}
@@ -270,17 +267,17 @@ const Fleet = () => {
 };
 
 const fleetTableHeader = [
-  { key: 'plateNo', label: 'Plate No.' },
-  { key: 'brand', label: 'Brand' },
-  { key: 'model', label: 'Model' },
-  { key: 'year', label: 'Year' },
-  { key: 'color', label: 'Color' },
-  { key: 'status', label: 'Status' },
-  { key: 'insuranceExp', label: 'Insurance Exp.' },
-  { key: 'vignetteExp', label: 'Vignette Exp.' },
-  { key: 'mileage', label: 'Mileage' },
-  { key: 'vin', label: 'VIN' },
-  { key: 'itpDate', label: 'ITP Date' },
+  { key: "plateNo", label: "Plate No." },
+  { key: "brand", label: "Brand" },
+  { key: "model", label: "Model" },
+  { key: "year", label: "Year" },
+  { key: "color", label: "Color" },
+  { key: "status", label: "Status" },
+  { key: "insuranceExp", label: "Insurance Exp." },
+  { key: "vignetteExp", label: "Vignette Exp." },
+  { key: "mileage", label: "Mileage" },
+  { key: "vin", label: "VIN" },
+  { key: "itpDate", label: "ITP Date" },
 ];
 
 export default Fleet;
