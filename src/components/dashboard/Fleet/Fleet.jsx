@@ -128,7 +128,7 @@ const Fleet = () => {
     setAddCarDetailModal(true);
   };
 
-  const closeAddCardModalHandler = () => {
+  const closeAddCarModalHandler = () => {
     setAddCarDetailModal(false);
   };
 
@@ -163,7 +163,7 @@ const Fleet = () => {
 
     newCarData.push(newCarEntry);
     setCarData(newCarData);
-    closeAddCardModalHandler();
+    closeAddCarModalHandler();
   };
 
   const deleteCarHandler = () => {
@@ -245,7 +245,7 @@ const Fleet = () => {
 
       <CustomModal setIsOpen={setAddCarDetailModal} isOpen={addCarDetailModal}>
         <AddCarDetailForm
-          onClose={closeAddCardModalHandler}
+          onClose={closeAddCarModalHandler}
           onSubmit={addCarDataHandler}
         />
       </CustomModal>

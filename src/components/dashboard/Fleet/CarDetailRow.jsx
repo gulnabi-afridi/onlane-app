@@ -16,7 +16,6 @@ const CarDetailRow = ({
   const openUpdateModalHandler = (id) => {
     onOpenUpdateModal(id);
   };
-  console.log(showEditMenu);
   return (
     <div className="w-full grid min-h-[36px] rounded-[4px] px-3 grid-cols-[.2fr,.7fr,1fr,.5fr,.5fr,.5fr,1fr,1fr,.6fr,1.3fr,1fr,20px] justify-center items-center">
       <button
