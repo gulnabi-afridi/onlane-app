@@ -142,14 +142,13 @@ const Fleet = () => {
   };
 
   const addCarDataHandler = (formData) => {
-    // console.log(formData);
     const newCarData = [...carData];
     const newCarEntry = {
       id: newCarData.length + 1,
       plateNo: formData.plateNo,
       brandModel: {
-        brand: formData.brand,
-        model: formData.model,
+        brand: formData.brandModel.brand,
+        model: formData.brandModel.model,
       },
       model: formData.model,
       year: formData.year,
@@ -181,8 +180,6 @@ const Fleet = () => {
       const updatedData = [...carData];
       updatedData[index] = updatedCarData;
       setCarData(updatedData);
-
-      console.log(carData);
     } else {
       // If the item is not found, you can handle it according to your requirements
       console.error("Item with id", updatedCarData.id, "not found.");
