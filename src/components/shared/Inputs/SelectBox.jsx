@@ -1,11 +1,10 @@
-import React from "react";
-
+import React from 'react';
 const CustomSelectBox = ({ options, value, onChange }) => {
   return (
     <select
       value={value}
       onChange={onChange}
-      className="border-solid border-[#000000] border-[0.5px] px-2  py-2 h-[17px] w-[258px] text-[10px] text-black-main focus:outline-none"
+      className=' w-[258px] h-[19px] flex justify-center items-center border-[0.5px] border-black-main px-0 text-[10px] text-black-main focus:outline-none'
     >
       {options.map((option, i) => (
         <option key={i} value={option.value}>
