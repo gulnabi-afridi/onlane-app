@@ -14,7 +14,7 @@ const Dashboard = () => {
         </Typography.MediumText>
       </div>
       {/* widgets ---->  */}
-      <div className='w-full min-h-[200px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 lg:gap-4 xl:gap-7'>
+      <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 lg:gap-4 xl:gap-7'>
         {widgetData.map((item, index) => {
           return (
             <Widget
