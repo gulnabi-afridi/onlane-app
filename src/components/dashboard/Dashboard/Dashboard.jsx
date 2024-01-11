@@ -4,7 +4,7 @@ import Widget from './Widget';
 
 const Dashboard = () => {
   return (
-    <div className='w-full min-h-screen flex flex-col px-2 md:px-8 xl:px-14'>
+    <div className='w-full h-auto md:min-h-screen flex flex-col px-2 md:px-8 xl:px-14'>
       <div className='w-full h-[140px] flex flex-col justify-center items-start gap-2'>
         <Typography.H1 styles='text-black-main font-extrabold'>
           Dashboard
@@ -27,7 +27,7 @@ const Dashboard = () => {
         })}
       </div>
       {/* upcomming payment ---->  */}
-      <div className='w-full min-h-[110px] flex flex-col gap-3 my-4 p-4 sm:p-5 bg-white-main rounded-[15px] uiShadow1 border-[1px] border-black-main/10'>
+      <div className='w-full h-auto md:min-h-[110px] flex flex-col gap-3 my-4 p-4 sm:p-5 bg-white-main rounded-[15px] uiShadow1 border-[1px] border-black-main/10'>
         <div className='w-full flex justify-between items-center'>
           <Typography.H2 styles='text-black-main font-poppins font-semibold '>
             Upcoming Payment
