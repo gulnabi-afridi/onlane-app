@@ -3,7 +3,7 @@ import Typography from '../../shared/Typography/Typography';
 
 const CardsDetailRow = ({ row, selectedRow, setSelectedRow }) => {
   return (
-    <div className='w-full min-w-[550px] grid min-h-[36px] rounded-[4px] px-3 grid-cols-[.1fr,1.7fr,1.2fr,1fr] md:grid-cols-[.1fr,1.3fr,1fr,1fr] justify-center items-center  gap-2 sm:gap-0'>
+    <div className='w-full min-w-[450px] grid min-h-[36px] rounded-[4px] px-3 grid-cols-[.1fr,1.7fr,1.2fr,1fr] md:grid-cols-[.1fr,1.3fr,1fr,1fr] justify-center items-center  gap-2 sm:gap-0'>
       <button
         onClick={() => setSelectedRow(row.id)}
         className={`w-[15px] h-[15px] ${

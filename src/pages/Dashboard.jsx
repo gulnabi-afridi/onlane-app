@@ -11,7 +11,7 @@ const DashboardPage = () => {
 
   return (
     <ComponentWrapper>
-      <div className='w-full grid min-h-screen grid-cols-1 lg:grid-cols-[274px,1fr] justify-start '>
+      <div className='w-full grid min-h-screen grid-cols-1 lg:grid-cols-[274px,calc(100%-274px)] justify-start '>
         {/* left navigation ============>  */}
         <LeftNavigation
           selectedOption={selectedOption}
@@ -19,7 +19,10 @@ const DashboardPage = () => {
         />
         {/* right portion ===========>  */}
         <div className='rightPor bg-black-off/5 h-full'>
-          <SmallScreenLeftNavigation />
+          <SmallScreenLeftNavigation
+            selectedOption={selectedOption}
+            setSelectedOption={setSelectedOption}
+          />
           <div className=''>
             {/* main dashboard =====>  */}
             {selectedOption === 'dashboard' && <Dashboard />}

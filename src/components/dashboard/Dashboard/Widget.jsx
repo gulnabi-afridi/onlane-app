@@ -9,7 +9,7 @@ const Widget = ({ title, subTitle, value }) => {
           <Typography.H2 styles='text-black-main font-semibold font-poppins'>
             {title}
           </Typography.H2>
-          <Typography.MediumText styles='text-white-off font-extralight font-poppins'>
+          <Typography.MediumText styles='text-white-off h-[50px] overflow-auto font-extralight font-poppins'>
             {subTitle}
           </Typography.MediumText>
         </div>

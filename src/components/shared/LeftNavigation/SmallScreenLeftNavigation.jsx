@@ -9,9 +9,8 @@ import * as Icons from '../../../svg/Icons';
 import { RxCross1 } from 'react-icons/rx';
 import { LuDot } from 'react-icons/lu';
 
-const SmallScreenLeftNavigation = () => {
+const SmallScreenLeftNavigation = ({ selectedOption, setSelectedOption }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState('dashboard');
 
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
@@ -47,7 +46,10 @@ const SmallScreenLeftNavigation = () => {
           </p>
           <div className='w-full max-w-[200px] flex flex-col gap-2 justify-center items-center mt-8'>
             <button
-              onClick={() => setSelectedOption('dashboard')}
+              onClick={() => {
+                setSelectedOption('dashboard');
+                setIsOpen(false);
+              }}
               className={`w-full grid grid-cols-[1.4fr,3fr] justify-start text-center items-center gap-3 h-[41px] rounded-[8px] ${
                 selectedOption === 'dashboard'
                   ? 'leftNavigationSha'
@@ -92,7 +94,10 @@ const SmallScreenLeftNavigation = () => {
                       return (
                         <button
                           key={index}
-                          onClick={() => setSelectedOption(list)}
+                          onClick={() => {
+                            setSelectedOption(list);
+                            setIsOpen(false);
+                          }}
                           className={`grid grid-cols-[1fr,1.3fr] w-full ${
                             list === selectedOption
                               ? 'leftNavigationSha'

@@ -11,6 +11,7 @@ import CarDetailHeader from './CarDetailHeader';
 import CustomModal from '../../shared/Modal/CustomModal';
 import AddCarDetailForm from '../../shared/Forms/AddCarDetailForm';
 import UpdateCarDetailForm from '../../shared/Forms/UpdateCarDetailForm';
+import { SearchIcon } from '../../../svg/Icons';
 
 const Fleet = () => {
   // states ------->
@@ -188,17 +189,22 @@ const Fleet = () => {
 
   return (
     <React.Fragment>
-      <div className='w-full flex flex-col h-full px-8'>
-        <div className='flex flex-col min-h-[190px] justify-between'>
+      <div className='w-full flex flex-col h-full px-2 md:px-4 lg:px-8'>
+        <div className='flex flex-col min-h-[150px] lg:min-h-[190px] justify-between'>
           <Typography.H1 styles='text-black-main font-extrabold pt-2 lg:pt-12'>
             Fleet Management
           </Typography.H1>
           {/* top header ----->  */}
-          <div className='w-full flex justify-between items-center pl-6 pb-4'>
+          <div className='w-full flex justify-between md:gap-0 gap-4 items-center flex-wrap pl-0 sm:pl-6 pb-4'>
             {/* search bar -->  */}
-            <SearchBar />
+            <div className='w-auto flex justify-center items-center gap-2'>
+              <button>
+                <SearchIcon />
+              </button>
+              <SearchBar />
+            </div>
             {/* delete + add button --->  */}
-            <div className='flex justify-center items-center gap-3'>
+            <div className='sm:w-auto w-full flex justify-end sm:justify-center items-center gap-2 md:gap-3'>
               <OutlineButton
                 event={deleteCarHandler}
                 styles='text-[12px] font-poppins w-[91px] font-normal h-[24px] rounded-[7px] text-success-main'
@@ -215,21 +221,23 @@ const Fleet = () => {
           </div>
         </div>
         {/* table ------>  */}
-        <div className='w-full h-[calc(100vh-270px)] flex flex-col'>
-          {/* header -->  */}
-          <CarDetailHeader header={fleetTableHeader} />
-          {/* rows ----->  */}
-          {carData.map((item, index) => {
-            return (
-              <CarDetailRow
-                key={index}
-                row={item}
-                selectedRow={selectedRow}
-                setSelectedRow={setSelectedRow}
-                onOpenUpdateModal={updateCarModalHandler}
-              />
-            );
-          })}
+        <div className='w-full overflow-auto'>
+          <div className='w-full max-w-[1100px] overflow-auto flex justify-start h-[calc(100vh-230px)] lg:h-[calc(100vh-270px)] flex-col'>
+            {/* header -->  */}
+            <CarDetailHeader header={fleetTableHeader} />
+            {/* rows ----->  */}
+            {carData.map((item, index) => {
+              return (
+                <CarDetailRow
+                  key={index}
+                  row={item}
+                  selectedRow={selectedRow}
+                  setSelectedRow={setSelectedRow}
+                  onOpenUpdateModal={updateCarModalHandler}
+                />
+              );
+            })}
+          </div>
         </div>
         {/* pagination -------->  */}
         <div className='w-full h-[80px] flex justify-center items-start pt-4 px-4 border-t-[1px] border-[#CECECE]'>

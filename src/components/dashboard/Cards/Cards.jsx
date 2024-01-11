@@ -100,11 +100,13 @@ const Cards = () => {
           <div className='w-full flex sm:justify-between sm:gap-0 gap-4 items-center pl-0 sm:pl-6 pb-4 flex-wrap '>
             {/* search bar -->  */}
             <div className='flex gap-2 items-center'>
-              <SearchIcon />
+              <button>
+                <SearchIcon />
+              </button>
               <SearchBar />
             </div>
             {/* delete + add button --->  */}
-            <div className='sm:w-auto w-full flex justify-end sm:justify-center items-center gap-1 sm:gap-3'>
+            <div className='sm:w-auto w-full flex justify-end sm:justify-center items-center gap-2 sm:gap-3'>
               <OutlineButton
                 event={deleteCardDataHandler}
                 styles='text-[12px] font-poppins w-[100px] sm:w-[91px] font-normal h-[24px] rounded-[7px] text-success-main'
@@ -135,7 +137,7 @@ const Cards = () => {
           ))}
         </div>
         {/* pagination -------->  */}
-        <div className='w-full h-[65px] sm:h-[80px] flex justify-center items-start pt-1 sm:pt-4 px-4 border-t-[1px] border-[#CECECE]'>
+        <div className='w-full h-[65px] sm:h-[80px] flex justify-center items-start px-4 border-t-[1px] border-[#CECECE]'>
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}

@@ -42,7 +42,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const pages = paginationRange();
 
   return (
-    <div className='w-full flex justify-between items-start sm:items-center'>
+    <div className='w-full h-full flex justify-between items-center'>
       <p className='text-[12px] md:text-[15px] text-black-main font-poppins'>
         <span className='font-bold'> Items: </span>5 out of 5
       </p>
