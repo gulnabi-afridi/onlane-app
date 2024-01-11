@@ -44,7 +44,7 @@ const Dashboard = () => {
       </div>
 
       {/* charging sessions section -------->  */}
-      <div className='w-full h-[calc(100vh-520px)] flex flex-col gap-3 bg-white-main rounded-[15px] uiShadow1 p-4 sm:p-5 border-[1px] border-black-main/10'>
+      <div className='w-full h-auto md:h-[calc(100vh-520px)] flex flex-col gap-3 bg-white-main rounded-[15px] uiShadow1 p-4 sm:p-5 border-[1px] border-black-main/10'>
         <Typography.H2 styles='text-black-main font-poppins font-semibold'>
           Charging Sessions
         </Typography.H2>
@@ -112,6 +112,66 @@ const widgetData = [
 const chargingSessionTable = {
   header: ['Date', 'Location', 'Net Price', 'Plate No.', 'Driver', 'Merchant'],
   rows: [
+    {
+      row: [
+        '6 Nov 2023',
+        'Bucuresti',
+        '1.3 RON/kWh',
+        'B 200 BRR',
+        'John Doe',
+        'ACME S.R.L',
+      ],
+    },
+    {
+      row: [
+        '6 Nov 2023',
+        'Bucuresti',
+        '1.3 RON/kWh',
+        'B 200 BRR',
+        'John Doe',
+        'ACME S.R.L',
+      ],
+    },
+    {
+      row: [
+        '6 Nov 2023',
+        'Bucuresti',
+        '1.3 RON/kWh',
+        'B 200 BRR',
+        'John Doe',
+        'ACME S.R.L',
+      ],
+    },
+    {
+      row: [
+        '6 Nov 2023',
+        'Bucuresti',
+        '1.3 RON/kWh',
+        'B 200 BRR',
+        'John Doe',
+        'ACME S.R.L',
+      ],
+    },
+    {
+      row: [
+        '6 Nov 2023',
+        'Bucuresti',
+        '1.3 RON/kWh',
+        'B 200 BRR',
+        'John Doe',
+        'ACME S.R.L',
+      ],
+    },
+    {
+      row: [
+        '6 Nov 2023',
+        'Bucuresti',
+        '1.3 RON/kWh',
+        'B 200 BRR',
+        'John Doe',
+        'ACME S.R.L',
+      ],
+    },
     {
       row: [
         '6 Nov 2023',
