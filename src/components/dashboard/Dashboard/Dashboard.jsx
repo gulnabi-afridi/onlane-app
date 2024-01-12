@@ -66,7 +66,7 @@ const Dashboard = () => {
             })}
           </div>
           {/* rows ---->  */}
-          <div className='w-full min-w-[700px] max-h-[170px] overflow-auto flex flex-col'>
+          <div className='w-full min-w-[700px]  h-[170px] sm:max-h-[170px] overflow-auto flex flex-col'>
             {chargingSessionTable.rows.map((item, rowIndex) => (
               <div
                 key={rowIndex}
