@@ -112,7 +112,7 @@ const AddCarDetailForm = ({ onClose, onSubmit }) => {
       </form>
       {/*   CONTENT */}
       <div className='px-6'>
-        <div className='flex  py-8  gap-[20px] justify-around flex-wrap'>
+        <div className='flex py-8 gap-[20px] justify-around flex-wrap'>
           <div className='flex flex-col gap-2 '>
             <div className='flex flex-col gap-1'>
               <Typography.LabelText>Plate Number:</Typography.LabelText>
