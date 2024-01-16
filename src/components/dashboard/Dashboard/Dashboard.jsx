@@ -4,7 +4,7 @@ import Widget from './Widget';
 
 const Dashboard = () => {
   return (
-    <div className='w-full h-auto sm:min-h-screen flex flex-col px-2 md:px-8 xl:px-14'>
+    <div className='w-full h-auto sm:min-h-screen flex flex-col px-2 md:px-8 xl:px-10 sm:pb-0 pb-4'>
       <div className='w-full h-[140px] flex flex-col justify-center items-start gap-2'>
         <Typography.H1 styles='text-black-main font-extrabold'>
           Dashboard

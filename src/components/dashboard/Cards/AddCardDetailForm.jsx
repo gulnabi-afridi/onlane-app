@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Typography from '../Typography/Typography';
-import FillButton from '../Buttons/FillButton';
+import Typography from '../../shared/Typography/Typography';
+import FillButton from '../../shared/Buttons/FillButton';
 
 const AddCardDetailForm = ({ onClose, onSubmit }) => {
   const [uid, setUid] = useState('');
@@ -56,7 +56,7 @@ const AddCardDetailForm = ({ onClose, onSubmit }) => {
       </form>
       {/*   CONTENT */}
       <div className='px-6'>
-        <div className='flex  py-8  gap-[20px] justify-around flex-wrap'>
+        <div className='flex py-8  gap-[20px] justify-around flex-wrap'>
           <div className='flex flex-col gap-2 '>
             <div className='flex flex-col gap-1'>
               <Typography.LabelText>Card UID</Typography.LabelText>

@@ -8,13 +8,17 @@ import CardsDetailHeader from './CardsDetailHeader';
 import CardsDetailRow from './CardsDetailRow';
 import Pagination from '../../shared/Pagination/Pagination';
 import CustomModal from '../../shared/Modal/CustomModal';
-import AddCardDetailForm from '../../shared/Forms/AddCardDetailForm';
+import AddCardDetailForm from '../../dashboard/Cards/AddCardDetailForm';
+import UpdateCardDetail from './UpdateCardDetail';
 
 const Cards = () => {
   //   STATES ============>
   const [currentPage, setCurrentPage] = React.useState(1);
   const [selectedRow, setSelectedRow] = useState(null);
   const [showAddCardDetailModal, setShowAddCarDetailModal] = useState(false);
+  const [updateCardDetailModal, setUpdateCardDetailModal] = useState(false);
+  const [showEditMenu, setShowEditMenu] = useState(null);
+  const [updateFormData, setUpdateFormData] = useState(null);
 
   const totalPages = 10;
 
@@ -65,11 +69,16 @@ const Cards = () => {
   };
 
   const addCardModalHandler = () => {
+    setShowEditMenu(false);
     setShowAddCarDetailModal(true);
   };
 
   const closeAddCardModalHandler = () => {
     setShowAddCarDetailModal(false);
+  };
+
+  const closeUpdateCarModalHandler = () => {
+    setUpdateCardDetailModal(false);
   };
 
   //   Adding Data in rows
@@ -83,14 +92,39 @@ const Cards = () => {
     setCardData([...cardData, newCardData]);
     closeAddCardModalHandler();
   };
+  // FOR MODAL
+  const updateCardModalHandler = (id) => {
+    const selectedCar = cardData.find((car) => car.id === id);
+    setUpdateFormData(selectedCar);
+    setUpdateCardDetailModal(true);
+    setShowEditMenu(false);
+  };
+  // UPDAING CARD DATA
+
+  const updateCardDataHandler = (updatedCarData) => {
+    // Find the index of the item with the matching id
+    const index = cardData.findIndex((card) => card.id === updatedCarData.id);
+
+    // If the item is found, update the array, otherwise add the new data
+    if (index !== -1) {
+      const updatedData = [...cardData];
+      updatedData[index] = updatedCarData;
+      setCardData(updatedData);
+    } else {
+      // If the item is not found, you can handle it according to your requirements
+      console.error('Item with id', updatedCarData.id, 'not found.');
+    }
+  };
 
   //   DELETING DATA FROM ROWS
   const deleteCardDataHandler = () => {
+    setShowEditMenu(null);
     const updatedCardData = cardData.filter((row) => row.id !== selectedRow);
     setCardData(updatedCardData);
   };
+
   return (
-    <>
+    <React.Fragment>
       <div className='w-full flex flex-col h-full px-2 md:px-4 lg:px-8'>
         <div className='flex flex-col min-h-[150px] lg:min-h-[190px] justify-between'>
           <Typography.H1 styles='text-black-main font-extrabold pt-2 lg:pt-12'>
@@ -133,6 +167,9 @@ const Cards = () => {
               key={row.id}
               selectedRow={selectedRow}
               setSelectedRow={setSelectedRow}
+              showEditMenu={showEditMenu}
+              setShowEditMenu={setShowEditMenu}
+              onOpenUpdateModal={updateCardModalHandler}
             />
           ))}
         </div>
@@ -155,7 +192,20 @@ const Cards = () => {
           onSubmit={addCardDataHandler}
         />
       </CustomModal>
-    </>
+
+      {/*     Update Modal  */}
+      <CustomModal
+        setIsOpen={setUpdateCardDetailModal}
+        isOpen={updateCardDetailModal}
+        styles='md:w-[499px] md:max-w-[480px] my-auto overflow-y-scroll'
+      >
+        <UpdateCardDetail
+          onClose={closeUpdateCarModalHandler}
+          updateFormData={updateFormData}
+          onUpdate={updateCardDataHandler}
+        />
+      </CustomModal>
+    </React.Fragment>
   );
 };
 

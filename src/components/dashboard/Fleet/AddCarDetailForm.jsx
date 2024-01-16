@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Typography from '../Typography/Typography';
-import CustomSelectBox from '../Inputs/SelectBox';
-import CustomDatePicker from '../Inputs/DatePicker';
-import FillButton from '../Buttons/FillButton';
+import Typography from '../../shared/Typography/Typography';
+import CustomSelectBox from '../../shared/Inputs/SelectBox';
+import CustomDatePicker from '../../shared/Inputs/DatePicker';
+import FillButton from '../../shared/Buttons/FillButton';
 import { extractYearFromDate, formatDate } from '../../utils/formateDate';
 
 const AddCarDetailForm = ({ onClose, onSubmit }) => {

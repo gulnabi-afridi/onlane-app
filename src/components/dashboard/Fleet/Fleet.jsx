@@ -9,8 +9,8 @@ import Pagination from '../../shared/Pagination/Pagination';
 import CarDetailRow from './CarDetailRow';
 import CarDetailHeader from './CarDetailHeader';
 import CustomModal from '../../shared/Modal/CustomModal';
-import AddCarDetailForm from '../../shared/Forms/AddCarDetailForm';
-import UpdateCarDetailForm from '../../shared/Forms/UpdateCarDetailForm';
+import AddCarDetailForm from '../../dashboard/Fleet/AddCarDetailForm';
+import UpdateCarDetailForm from '../../dashboard/Fleet/UpdateCarDetailForm';
 import { SearchIcon } from '../../../svg/Icons';
 
 const Fleet = () => {
@@ -18,6 +18,7 @@ const Fleet = () => {
   const [currentPage, setCurrentPage] = React.useState(1);
   const [selectedRow, setSelectedRow] = useState(2);
   const [addCarDetailModal, setAddCarDetailModal] = useState(false);
+  const [showEditMenu, setShowEditMenu] = useState(null);
 
   const [updateCardDetailModal, setUpdateCartDetailModal] = useState(false);
   const [updateFormData, setUpdateFormData] = useState(null);
@@ -126,6 +127,7 @@ const Fleet = () => {
   };
   // methods ends here ------->
   const addCarModalHandler = () => {
+    setShowEditMenu(null);
     setAddCarDetailModal(true);
   };
 
@@ -168,6 +170,7 @@ const Fleet = () => {
   };
 
   const deleteCarHandler = () => {
+    setShowEditMenu(null);
     const updatedCarData = carData.filter((item) => item.id !== selectedRow);
     setCarData(updatedCarData);
   };
@@ -234,6 +237,8 @@ const Fleet = () => {
                   selectedRow={selectedRow}
                   setSelectedRow={setSelectedRow}
                   onOpenUpdateModal={updateCarModalHandler}
+                  showEditMenu={showEditMenu}
+                  setShowEditMenu={setShowEditMenu}
                 />
               );
             })}
