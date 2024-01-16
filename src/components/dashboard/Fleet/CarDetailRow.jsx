@@ -38,7 +38,7 @@ const CarDetailRow = ({
   }, [showEditMenu, setShowEditMenu]);
 
   return (
-    <div className='min-w-[1100px] grid min-h-[36px] rounded-[4px] px-3 grid-cols-[.2fr,.7fr,1fr,.5fr,.5fr,.5fr,1fr,1fr,.6fr,1.3fr,1fr,20px] justify-center items-center'>
+    <div className='min-w-[1030px] grid min-h-[36px] rounded-[4px] px-3 grid-cols-[.2fr,.7fr,1fr,.5fr,.5fr,.5fr,1fr,1fr,.6fr,1.3fr,1fr,20px] justify-center items-center'>
       <button
         onClick={() => setSelectedRow(row.id)}
         className={`w-[15px] h-[15px] ${
@@ -88,7 +88,7 @@ const CarDetailRow = ({
           {row.mileage}
         </Typography.NormalText>
       </div>
-      <div className='w-full max-w-[150px] overflow-auto hideScroll'>
+      <div className='w-full overflow-hidden hideScroll'>
         <Typography.NormalText styles='text-black-main font-poppins font-light'>
           {row.vin}
         </Typography.NormalText>

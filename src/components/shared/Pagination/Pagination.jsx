@@ -63,7 +63,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             disabled={currentPage === 1}
             onClick={() => onPageChange(Math.max(1, currentPage - 1))}
           >
-            <MdExpandMore className='text-[22px] -rotate-90' />
+            <MdExpandMore className='text-[22px] rotate-90' />
           </button>
           {pages.map((page, index) => (
             <button
@@ -72,7 +72,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
                 currentPage === page
                   ? 'bg-success-main text-black-main'
                   : 'text-black-main bg-white'
-              } rounded-md border text-[12px] md:text-[16px] border-gray-300 hover:bg-gray-100`}
+              } rounded-md border text-[12px] md:text-[16px] border-gray-300 `}
               onClick={() => page !== '...' && onPageChange(page)}
               disabled={page === '...'}
             >

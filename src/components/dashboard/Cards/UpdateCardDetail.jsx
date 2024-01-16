@@ -52,7 +52,7 @@ const UpdateCardDetail = ({ onClose, updateFormData, onUpdate }) => {
         </div>
       </div>
       {/* form --------> */}
-      <form className='w-full flex px-4 sm:px-6 pt-4 sm:pt-8 gap-[20px] justify-around flex-wrap'>
+      <form className='w-full flex px-4 sm:px-6 pt-4 sm:pt-6 gap-[20px] justify-around flex-wrap'>
         <div className='w-full grid grid-cols-[60px,calc(100%-70px)] sm:grid-cols-[80px,calc(100%-80px)] gap-4'>
           <Typography.LabelText>Card UID</Typography.LabelText>
           <input

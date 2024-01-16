@@ -124,8 +124,8 @@ const Cards = () => {
   };
 
   return (
-    <React.Fragment>
-      <div className='w-full flex flex-col h-full px-2 md:px-4 lg:px-8'>
+    <div className='w-full flex justify-center items-center'>
+      <div className='w-full max-w-[1100px] m-auto flex flex-col h-full px-2 md:px-4 lg:px-8'>
         <div className='flex flex-col min-h-[150px] lg:min-h-[190px] justify-between'>
           <Typography.H1 styles='text-black-main font-extrabold pt-2 lg:pt-12'>
             Cards
@@ -205,7 +205,7 @@ const Cards = () => {
           onUpdate={updateCardDataHandler}
         />
       </CustomModal>
-    </React.Fragment>
+    </div>
   );
 };
 

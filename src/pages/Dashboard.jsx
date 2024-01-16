@@ -10,8 +10,8 @@ const DashboardPage = () => {
   const [selectedOption, setSelectedOption] = useState('dashboard');
 
   return (
-    <ComponentWrapper>
-      <div className='w-full grid min-h-screen grid-cols-1 lg:grid-cols-[274px,calc(100%-274px)] justify-start '>
+    <div className='w-full'>
+      <div className='w-full grid min-h-screen grid-cols-1 lg:grid-cols-[300px,calc(100%-300px)] justify-start '>
         {/* left navigation ============>  */}
         <LeftNavigation
           selectedOption={selectedOption}
@@ -31,7 +31,7 @@ const DashboardPage = () => {
           </div>
         </div>
       </div>
-    </ComponentWrapper>
+    </div>
   );
 };
 
