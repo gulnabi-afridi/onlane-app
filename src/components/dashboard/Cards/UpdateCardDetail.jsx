@@ -66,7 +66,7 @@ const UpdateCardDetail = ({ onClose, updateFormData, onUpdate }) => {
                 uid: e.target.value,
               })
             }
-            className='border-solid border-[#000000] border-[0.5px] py-2 px-1 h-[19px] flex justify-center items-center w-full text-[10px] focus:outline-none'
+            className='border-solid border-[#000000] border-[0.5px] py-2 px-1 h-[19px] flex justify-center items-center w-[95%] text-[10px] focus:outline-none'
           />
         </div>
         <div className='w-full grid grid-cols-[60px,calc(100%-70px)] sm:grid-cols-[80px,calc(100%-80px)] gap-4'>
@@ -82,7 +82,7 @@ const UpdateCardDetail = ({ onClose, updateFormData, onUpdate }) => {
                 vid: e.target.value,
               })
             }
-            className='border-solid border-[#000000]  border-[0.5px] px-1 h-[19px] flex justify-center items-center py-2 w-full text-[10px] focus:outline-none'
+            className='border-solid border-[#000000]  border-[0.5px] px-1 h-[19px] flex justify-center items-center py-2 w-[95%] text-[10px] focus:outline-none'
           />
         </div>
         {/* buttons */}

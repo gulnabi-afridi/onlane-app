@@ -139,6 +139,7 @@ const Fleet = () => {
     const selectedCar = carData.find((car) => car.id === id);
     setUpdateFormData(selectedCar);
     setUpdateCartDetailModal(true);
+    setShowEditMenu(null);
   };
   const closeUpdateCarModalHandler = () => {
     setUpdateCartDetailModal(false);
