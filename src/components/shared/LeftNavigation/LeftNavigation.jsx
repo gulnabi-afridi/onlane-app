@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Typography from '../Typography/Typography';
 import * as Icons from '../../../svg/Icons';
 import { LuDot } from 'react-icons/lu';
@@ -21,7 +21,7 @@ const LeftNavigation = ({ selectedOption, setSelectedOption }) => {
           }  `}
         >
           <div className='w-full flex justify-end items-center'>
-            <Icons.home
+            <Icons.Home
               ClassName='w-[24px] h-[24px]'
               fill={`${selectedOption === 'dashboard' ? '#25A18E' : '#C2C2C2'}`}
             />
@@ -99,17 +99,17 @@ export default LeftNavigation;
 const leftNavigation = [
   {
     category: 'Control',
-    icon: <Icons.control ClassName='w-[24px] h-[24px]' />,
+    icon: <Icons.Control ClassName='w-[24px] h-[24px]' />,
     items: ['Fleet', 'Drivers', 'Cards', 'Sessions'],
   },
   {
     category: 'Billing',
-    icon: <Icons.billing ClassName='w-[24px] h-[24px]' />,
+    icon: <Icons.Billing ClassName='w-[24px] h-[24px]' />,
     items: ['Statements'],
   },
   {
     category: 'User',
-    icon: <Icons.user ClassName='w-[24px] h-[24px]' />,
+    icon: <Icons.User ClassName='w-[24px] h-[24px]' />,
     items: ['Account'],
   },
 ];
