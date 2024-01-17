@@ -14,18 +14,20 @@ const LeftNavigation = ({ selectedOption, setSelectedOption }) => {
       <div className='w-full flex flex-col gap-2 justify-center items-center'>
         <button
           onClick={() => setSelectedOption('dashboard')}
-          className={`w-full max-w-[234px] flex justify-center items-center gap-3 h-[41px] rounded-[8px] ${
+          className={`w-full max-w-[234px] grid grid-cols-[80px,calc(100%-80px)] justify-center items-center gap-3 h-[41px] rounded-[8px] ${
             selectedOption === 'dashboard'
               ? 'leftNavigationSha'
               : 'bg-transparent'
           }  `}
         >
-          <Icons.home
-            ClassName='w-[24px] h-[24px]'
-            fill={`${selectedOption === 'dashboard' ? '#25A18E' : '#C2C2C2'}`}
-          />
+          <div className='w-full flex justify-end items-center'>
+            <Icons.home
+              ClassName='w-[24px] h-[24px]'
+              fill={`${selectedOption === 'dashboard' ? '#25A18E' : '#C2C2C2'}`}
+            />
+          </div>
           <Typography.MediumText
-            styles={` tracking-wider ${
+            styles={` tracking-wider w-full text-start ${
               selectedOption === 'dashboard'
                 ? 'text-success-main font-medium'
                 : 'text-[#C2C2C2] font-normal'
@@ -37,10 +39,16 @@ const LeftNavigation = ({ selectedOption, setSelectedOption }) => {
         {/* control ---->  */}
         {leftNavigation.map((item, index) => {
           return (
-            <div key={index} className='w-full flex flex-col gap-2'>
-              <button className='w-full max-w-[234px] flex justify-center items-center gap-3 h-[41px] rounded-[8px]'>
-                {item.icon}
-                <Typography.MediumText styles='font-normal tracking-wider text-black-cool'>
+            <div
+              key={index}
+              className='w-full flex flex-col justify-center items-center gap-2'
+            >
+              <button className='w-full  max-w-[234px] grid grid-cols-[80px,calc(100%-80px)] justify-center items-center gap-3 h-[41px] rounded-[8px]'>
+                <div className='w-full flex justify-end items-center'>
+                  {item.icon}
+                </div>
+
+                <Typography.MediumText styles='font-normal tracking-wider text-black-cool text-start'>
                   {item.category}
                 </Typography.MediumText>
               </button>

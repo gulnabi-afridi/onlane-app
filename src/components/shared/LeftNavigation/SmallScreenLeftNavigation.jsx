@@ -44,13 +44,13 @@ const SmallScreenLeftNavigation = ({ selectedOption, setSelectedOption }) => {
             <span className='text-success-main'>On</span>
             <span className='text-black-main'>Lane</span>
           </p>
-          <div className='w-full max-w-[200px] flex flex-col gap-2 justify-center items-center mt-8'>
+          <div className='w-full max-w-[200px] flex flex-col gap-1 sm:gap-2 justify-center items-center mt-8'>
             <button
               onClick={() => {
                 setSelectedOption('dashboard');
                 setIsOpen(false);
               }}
-              className={`w-full grid grid-cols-[1.4fr,3fr] justify-start text-center items-center gap-3 h-[41px] rounded-[8px] ${
+              className={`w-full grid grid-cols-[1.4fr,3fr] justify-start text-center items-center gap-3 h-[35px] sm:h-[41px] rounded-[8px] ${
                 selectedOption === 'dashboard'
                   ? 'leftNavigationSha'
                   : 'bg-transparent'
@@ -79,8 +79,11 @@ const SmallScreenLeftNavigation = ({ selectedOption, setSelectedOption }) => {
             {/* control ---->  */}
             {leftNavigation.map((item, index) => {
               return (
-                <div key={index} className='w-full flex flex-col gap-2'>
-                  <button className='w-full max-w-[234px] grid grid-cols-[1.4fr,3fr] justify-start items-center gap-3 h-[41px] rounded-[8px]'>
+                <div
+                  key={index}
+                  className='w-full flex flex-col gap-0 sm:gap-2'
+                >
+                  <button className='w-full max-w-[234px] grid grid-cols-[1.4fr,3fr] justify-start items-center gap-3 h-[35px] sm:h-[41px] rounded-[8px]'>
                     <div className='w-full flex justify-end'>{item.icon}</div>
                     <div className='w-full flex justify-start'>
                       <Typography.MediumText styles='font-normal tracking-wider text-black-cool'>
@@ -102,7 +105,7 @@ const SmallScreenLeftNavigation = ({ selectedOption, setSelectedOption }) => {
                             list === selectedOption
                               ? 'leftNavigationSha'
                               : 'bg-transparent'
-                          }  h-[41px] max-w-[234px] group justify-start items-center gap-1`}
+                          }  h-[35px] sm:h-[41px] max-w-[234px] group justify-start items-center gap-1`}
                         >
                           <div className='w-full flex justify-end'>
                             <LuDot
